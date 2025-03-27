@@ -30,9 +30,6 @@ class _LoginPageState extends State<LoginPage> {
             decoration: BoxDecoration(
               color: Colors.white
             ),
-          
-            
-            
           ),
           Container(
             height: MediaQuery.of(context).size.height * 0.75,
@@ -57,17 +54,17 @@ class _LoginPageState extends State<LoginPage> {
                           TextSpan(
                             text: "You Have Been Missed !\n",
                             style: TextStyle(
-                              fontFamily: 'RadioGrotesk',
+                              fontFamily: 'Raleway',
+                              fontWeight: FontWeight.w500,
                               fontSize: 29,
                               
                     
                             ),
-
                           ),
                           TextSpan(
                             text: "Welcome Back !",
                             style: TextStyle(
-                              fontFamily: 'RadioGrotesk',
+                              fontFamily: 'Raleway',
                               fontSize: 34,
                               height: 1.4,
                               color: AppColors.util,
@@ -87,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                       label: Text(
                         "Username Or E-mail",
                         style: TextStyle(
-                          fontFamily: 'RadioGrotesk',
+                          fontFamily: 'Raleway',
                           color: Colors.white
                         ),
                         ),
@@ -104,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                         "Password",
 
                         style: TextStyle(
-                          fontFamily: 'RadioGrotesk',
+                          fontFamily: 'Raleway',
                           color: Colors.white
                         ),
                         ),
@@ -127,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: Text(
                           "Login",
                           style: TextStyle(
-                            fontFamily: 'RadioGrotesk',
+                            fontFamily: 'Raleway',
                             color: Colors.white,
                             fontSize: 18
                           ),
@@ -143,7 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                       Text(
                         "Not An User?",
                         style: TextStyle(
-                          fontFamily: 'RadioGrotesk',
+                          fontFamily: 'Raleway',
                           color: AppColors.grey,
                           fontSize: 16
                         ),
@@ -160,7 +157,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: Text(
                           "Register Now",
                           style: TextStyle(
-                            fontFamily: 'RadioGrotesk',
+                            fontFamily: 'Raleway',
                             color: AppColors.util,
                             fontSize: 16,
                             fontWeight: FontWeight.bold

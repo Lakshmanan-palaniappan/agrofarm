@@ -1,0 +1,2 @@
+L:/Flutter_Projects/agrofarm/android/app/.cxx/Debug/2c205w2a/x86/CMakeFiles/edit_cache.dir
+L:/Flutter_Projects/agrofarm/android/app/.cxx/Debug/2c205w2a/x86/CMakeFiles/rebuild_cache.dir
