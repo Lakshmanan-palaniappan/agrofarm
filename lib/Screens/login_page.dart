@@ -125,8 +125,9 @@ class _LoginPageState extends State<LoginPage> {
                           "Login",
                           style: TextStyle(
                             fontFamily: 'Raleway',
-                            color: Colors.white,
-                            fontSize: 18
+                            color: AppColors.black,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
                           ),
                         ),
                       ),

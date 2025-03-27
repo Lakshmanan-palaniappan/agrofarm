@@ -133,26 +133,57 @@ class _RegisterUserState extends State<RegisterUser> {
                       const EdgeInsets.only(top: 20.0, right: 18.0, left: 18.0),
                   child: Column(
                     children: <Widget>[
-                      TextField(
-                        controller: nameController,
-                        decoration: const InputDecoration(
-                            label: Text(
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
                           "Enter Name",
                           style: TextStyle(
+                            //fontWeight: FontWeight.bold,
+                              color: AppColors.primary,
                               fontFamily: 'Raleway',
-                              //fontWeight: FontWeight.bold,
-                              color: AppColors.primary),
-                        )),
+                              fontWeight: FontWeight.w700,
+                              fontSize: 15
+                          ),
+                        ),
                       ),
                       const SizedBox(height: 20,),
-                      const Text(
-                        "Enter Phone",
-                        style: TextStyle(
-                          //fontWeight: FontWeight.bold,
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
                             color: AppColors.primary,
-                            fontFamily: 'Raleway',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 15
+                            width: 2
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                          color: Colors.white
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: TextField(
+                            controller: nameController,
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'Leo Das',
+                              hintStyle: TextStyle(
+                                color: AppColors.grey,
+                                fontFamily: 'Raleway'
+                              )
+                            ),
+                            keyboardType: TextInputType.name,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 20,),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "Enter Phone",
+                          style: TextStyle(
+                            //fontWeight: FontWeight.bold,
+                              color: AppColors.primary,
+                              fontFamily: 'Raleway',
+                            fontWeight: FontWeight.w700,
+                            fontSize: 15
+                          ),
                         ),
                       ),
                       const SizedBox(height: 20,),
@@ -183,10 +214,11 @@ class _RegisterUserState extends State<RegisterUser> {
                                               fontSize: 20
                                           ),
                                           onChanged:(value){
-                                            if(value.length==1){
+                                            if(value.isNotEmpty && index<9){
                                               FocusScope.of(context).nextFocus();
                                             }
                                           },
+
                                           decoration: const InputDecoration(
                                               border: InputBorder.none
                                           ),
@@ -285,6 +317,7 @@ class _RegisterUserState extends State<RegisterUser> {
                               style: TextStyle(
                                   fontFamily: 'Raleway',
                                   fontSize: 20,
+                                  fontWeight: FontWeight.w600,
                                   color: AppColors.black),
                             ),
                           ),
