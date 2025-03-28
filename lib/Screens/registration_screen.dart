@@ -22,6 +22,7 @@ class _RegisterUserState extends State<RegisterUser> {
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
   String? selectedrole;
+  String mobilenum='';
 
 
 
@@ -81,9 +82,6 @@ class _RegisterUserState extends State<RegisterUser> {
 
   @override
   Widget build(BuildContext context) {
-    final List<TextEditingController> _phonecontroller=List.generate(10, (index) =>
-        TextEditingController()
-    );
     SizeConfig.init(context);
     return Scaffold(
       body: Stack(
@@ -159,6 +157,9 @@ class _RegisterUserState extends State<RegisterUser> {
                         child: Padding(
                           padding: const EdgeInsets.only(left: 8.0),
                           child: TextField(
+                            style: const TextStyle(
+                                fontFamily: 'Raleway'
+                            ),
                             controller: nameController,
                             decoration: const InputDecoration(
                               border: InputBorder.none,
@@ -187,56 +188,39 @@ class _RegisterUserState extends State<RegisterUser> {
                         ),
                       ),
                       const SizedBox(height: 20,),
-                      Form(
-                          child:SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: List.generate(10, (index){
-                                  return Row(
-                                    children: [
-                                      Container(
-                                        height: MediaQuery.of(context).size.height * 0.06,
-                                        width: MediaQuery.of(context).size.width * 0.10,
-                                        decoration:BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius: BorderRadius.circular(8),
-                                            border: Border.all(
-                                                color: AppColors.primary,
-                                              width: 2
-                                            )
-                                        ),
-                                        child: TextField(
-                                          controller: _phonecontroller[index],
-                                          style: const TextStyle(
-                                              fontFamily: 'Raleway',
-                                              fontWeight: FontWeight.w700,
-                                              fontSize: 20
-                                          ),
-                                          onChanged:(value){
-                                            if(value.isNotEmpty && index<9){
-                                              FocusScope.of(context).nextFocus();
-                                            }
-                                          },
-
-                                          decoration: const InputDecoration(
-                                              border: InputBorder.none
-                                          ),
-                                          keyboardType: TextInputType.number,
-                                          inputFormatters: [
-                                            LengthLimitingTextInputFormatter(1),
-                                            FilteringTextInputFormatter.digitsOnly,
-
-                                          ],
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                      SizedBox(width: 7,)
-                                    ],
-                                  );
-                                })
+                      Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                                color: AppColors.primary,
+                                width: 2
                             ),
-                          )
+                            borderRadius: BorderRadius.circular(12),
+                            color: Colors.white
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: TextField(
+                            onChanged: (String value){
+                              if(value.length>9){
+                                mobilenum=value;
+                              }
+
+                            },
+                            style: const TextStyle(
+                                fontFamily: 'Raleway'
+                            ),
+                            controller: phoneController,
+                            decoration: const InputDecoration(
+                                border: InputBorder.none,
+                                hintText: '1234567891',
+                                hintStyle: TextStyle(
+                                    color: AppColors.grey,
+                                    fontFamily: 'Raleway'
+                                ),
+                            ),
+                            keyboardType: TextInputType.number,
+                          ),
+                        ),
                       ),
                       const SizedBox(height: 20,),
                       DropdownButtonFormField<String>(
@@ -298,10 +282,6 @@ class _RegisterUserState extends State<RegisterUser> {
                       const SizedBox(height: 20),
                       GestureDetector(
                         onTap: (){
-                          setState(() {
-                            String phonenumber= _phonecontroller.map((content)=>content.text).join('');
-                            print('Number is ${phonenumber.toString()}');
-                          });
 
                         },
                         child: Container(
