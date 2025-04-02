@@ -1,3 +1,4 @@
+import 'package:agrofarm/Views/OtpLoginPage.dart';
 import 'package:agrofarm/utils/app_color.dart';
 import 'package:agrofarm/utils/screen_sizes.dart';
 import 'package:flutter/material.dart';
@@ -282,6 +283,7 @@ class _RegisterUserState extends State<RegisterUser> {
                       const SizedBox(height: 20),
                       GestureDetector(
                         onTap: (){
+                          Navigator.push(context,MaterialPageRoute(builder: (BuildContext context)=>OtpLoginPage(phone: phoneController.text)));
 
                         },
                         child: Container(

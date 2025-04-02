@@ -1,6 +1,7 @@
-import 'package:agrofarm/Screens/login_page.dart';
 import 'package:agrofarm/utils/app_color.dart';
 import 'package:flutter/material.dart';
+
+import '../Views/login_page.dart';
 
 class IntroWidget extends StatelessWidget {
   const IntroWidget({

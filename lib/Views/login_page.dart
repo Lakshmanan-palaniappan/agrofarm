@@ -1,4 +1,4 @@
-import 'package:agrofarm/Screens/registration_screen.dart';
+import 'package:agrofarm/Views/registration_screen.dart';
 import 'package:agrofarm/utils/app_color.dart';
 import 'package:flutter/material.dart';
 
